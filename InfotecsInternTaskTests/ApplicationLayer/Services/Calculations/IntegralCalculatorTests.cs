@@ -1,6 +1,7 @@
-﻿using InfotecsInternTask.DomainLayer.DTO;
+﻿using InfotecsInternTask.ApplicationLayer.Services.Calculations;
+using InfotecsInternTask.DomainLayer.DTO;
 
-namespace InfotecsInternTask.ApplicationLayer.Services.Calculations.Tests
+namespace InfotecsInternTask.InfotecsInternTaskTests.ApplicationLayer.Services.Calculations
 {
     [TestClass()]
     public class IntegralCalculatorTests

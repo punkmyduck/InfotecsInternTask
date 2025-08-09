@@ -1,6 +1,7 @@
-﻿using InfotecsInternTask.DomainLayer.DTO;
+﻿using InfotecsInternTask.ApplicationLayer.Services.Validation;
+using InfotecsInternTask.DomainLayer.DTO;
 
-namespace InfotecsInternTask.ApplicationLayer.Services.Validation.Tests
+namespace InfotecsInternTask.InfotecsInternTaskTests.ApplicationLayer.Services.Validation
 {
     [TestClass()]
     public class CsvValuesValidatorTests

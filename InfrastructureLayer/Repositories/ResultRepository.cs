@@ -1,6 +1,6 @@
 ﻿using InfotecsInternTask.ApplicationLayer.Interfaces;
 using InfotecsInternTask.DomainLayer.Entities;
-using InfotecsInternTask.Infrastructure.EfCoreDbContext;
+using InfotecsInternTask.InfrastructureLayer.EfCoreDbContext;
 
 namespace InfotecsInternTask.InfrastructureLayer.Repositories
 {

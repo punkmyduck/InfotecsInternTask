@@ -1,6 +1,7 @@
 ﻿using System.Text;
+using InfotecsInternTask.InfrastructureLayer.Parsing;
 
-namespace InfotecsInternTask.InfrastructureLayer.Parsing.Tests
+namespace InfotecsInternTask.InfotecsInternTaskTests.InfrastructureLayer.Parsing
 {
     [TestClass()]
     public class CsvParserTests

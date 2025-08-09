@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35931.197 d17.13
+VisualStudioVersion = 17.13.35931.197
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfotecsInternTask", "InfotecsInternTask.csproj", "{D05B3FFB-B35E-4775-BE96-74C98D794569}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfotecsInternTaskTests", "..\InfotecsInternTaskTests\InfotecsInternTaskTests.csproj", "{49406E2E-AF45-43F9-BF9A-652377A29B36}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfotecsInternTaskTests", "InfotecsInternTaskTests\InfotecsInternTaskTests.csproj", "{8D158CB6-C9E2-4AC8-8090-1B3C1B5E6136}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{D05B3FFB-B35E-4775-BE96-74C98D794569}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D05B3FFB-B35E-4775-BE96-74C98D794569}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D05B3FFB-B35E-4775-BE96-74C98D794569}.Release|Any CPU.Build.0 = Release|Any CPU
-		{49406E2E-AF45-43F9-BF9A-652377A29B36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{49406E2E-AF45-43F9-BF9A-652377A29B36}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{49406E2E-AF45-43F9-BF9A-652377A29B36}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{49406E2E-AF45-43F9-BF9A-652377A29B36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D158CB6-C9E2-4AC8-8090-1B3C1B5E6136}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D158CB6-C9E2-4AC8-8090-1B3C1B5E6136}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D158CB6-C9E2-4AC8-8090-1B3C1B5E6136}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D158CB6-C9E2-4AC8-8090-1B3C1B5E6136}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
