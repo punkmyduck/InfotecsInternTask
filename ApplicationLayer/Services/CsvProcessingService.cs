@@ -34,7 +34,7 @@ namespace InfotecsInternTask.ApplicationLayer.Services
                 throw new ValidationException("Invalid data in CSV file.");
             var resultDto = _integralCalculator.Calculate(valuesDto);
             var result = _resultAggregateMapper.Map(resultDto, valuesDto, file.FileName) ?? throw new Exception();
-            await _resultRepository.AddResultWithValueAsync(result);
+            await _resultRepository.AddOrReplaceResultAsync(result);
         }
     }
 }

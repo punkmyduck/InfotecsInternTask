@@ -4,6 +4,6 @@ namespace InfotecsInternTask.ApplicationLayer.Interfaces
 {
     public interface IResultRepository
     {
-        Task AddResultWithValueAsync(Result result);
+        Task AddOrReplaceResultAsync(Result result);
     }
 }

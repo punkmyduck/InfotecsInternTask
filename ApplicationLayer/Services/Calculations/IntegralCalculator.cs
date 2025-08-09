@@ -30,7 +30,7 @@ namespace InfotecsInternTask.ApplicationLayer.Services.Calculations
             return new IntegralResultDto
             {
                 DeltaTime = (int)(maxDate - minDate).TotalSeconds,
-                MinDate = minDate,
+                MinDate = DateTime.SpecifyKind(minDate, DateTimeKind.Unspecified),
                 AverageExecutionTime = (int)averageExecutionTime,
                 AverageValue = (float)averageValue,
                 MedianValue = median,
