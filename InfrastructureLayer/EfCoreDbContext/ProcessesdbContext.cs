@@ -42,6 +42,9 @@ public partial class ProcessesdbContext : DbContext
             entity.Property(e => e.Maxvalue).HasColumnName("maxvalue");
             entity.Property(e => e.Medianvalue).HasColumnName("medianvalue");
             entity.Property(e => e.Mindate)
+            .HasConversion(
+                v => DateTime.SpecifyKind(v, DateTimeKind.Unspecified),
+                v => DateTime.SpecifyKind(v, DateTimeKind.Unspecified))
                 .HasColumnType("timestamp without time zone")
                 .HasColumnName("mindate");
             entity.Property(e => e.Minvalue).HasColumnName("minvalue");
@@ -55,6 +58,9 @@ public partial class ProcessesdbContext : DbContext
 
             entity.Property(e => e.Valueid).HasColumnName("valueid");
             entity.Property(e => e.Date)
+            .HasConversion(
+                v => DateTime.SpecifyKind(v, DateTimeKind.Unspecified),
+                v => DateTime.SpecifyKind(v, DateTimeKind.Unspecified))
                 .HasColumnType("timestamp without time zone")
                 .HasColumnName("date");
             entity.Property(e => e.Executiontime).HasColumnName("executiontime");
