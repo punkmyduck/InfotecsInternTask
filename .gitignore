@@ -1,0 +1,62 @@
+## Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Build results
+bin/
+obj/
+[Bb]uild/
+[Ll]og/
+[Ll]ogs/
+
+## NuGet
+*.nupkg
+*.snupkg
+*.nuspec
+packages/
+*.nuget.props
+*.nuget.targets
+
+## Rider
+.idea/
+
+## Visual Studio Code
+.vscode/
+
+## Others
+_TestResults/
+TestResults/
+*.tmp
+*.temp
+*.log
+*.vspscc
+*.vssscc
+*.dbmdl
+*.pdb
+*.cache
+*.bak
+*.backup
+*.swp
+
+## IIS Express
+.vs/config/applicationhost.config
+
+## ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+## User-specific
+*.rsuser
+*.sdf
+*.sqlite
+*.mdf
+*.ldf
+
+## Entity Framework
+Migrations/obj/
+
+## Publish output
+publish/
+wwwroot/dist/
