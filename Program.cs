@@ -1,3 +1,14 @@
+using InfotecsInternTask.ApplicationLayer.Interfaces;
+using InfotecsInternTask.ApplicationLayer.Services.Calculations;
+using InfotecsInternTask.ApplicationLayer.Services.Validation;
+using InfotecsInternTask.ApplicationLayer.Services;
+using InfotecsInternTask.DomainLayer.DTO;
+using InfotecsInternTask.InfrastructureLayer.Mapping;
+using InfotecsInternTask.InfrastructureLayer.Parsing;
+using InfotecsInternTask.InfrastructureLayer.Repositories;
+using Microsoft.EntityFrameworkCore;
+using System;
+using InfotecsInternTask.Infrastructure.EfCoreDbContext;
 
 namespace InfotecsInternTask
 {
@@ -8,6 +19,16 @@ namespace InfotecsInternTask
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services.AddScoped<CsvProcessingService>();
+            builder.Services.AddScoped<ICsvParser<CsvValueDto>, CsvParser>();
+            builder.Services.AddScoped<ICsvValuesValidator, CsvValuesValidator>();
+            builder.Services.AddScoped<IIntegralCalculator, IntegralCalculator>();
+            builder.Services.AddScoped<IResultAggregateMapper, ResultAggregateMapper>();
+
+            builder.Services.AddScoped<IResultRepository, ResultRepository>();
+
+            builder.Services.AddDbContext<ProcessesdbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
