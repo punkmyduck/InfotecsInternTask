@@ -8,7 +8,7 @@ using InfotecsInternTask.InfrastructureLayer.Parsing;
 using InfotecsInternTask.InfrastructureLayer.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System;
-using InfotecsInternTask.Infrastructure.EfCoreDbContext;
+using InfotecsInternTask.InfrastructureLayer.EfCoreDbContext;
 
 namespace InfotecsInternTask
 {

@@ -1,7 +1,7 @@
 ﻿using InfotecsInternTask.DomainLayer.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace InfotecsInternTask.Infrastructure.EfCoreDbContext;
+namespace InfotecsInternTask.InfrastructureLayer.EfCoreDbContext;
 
 public partial class ProcessesdbContext : DbContext
 {

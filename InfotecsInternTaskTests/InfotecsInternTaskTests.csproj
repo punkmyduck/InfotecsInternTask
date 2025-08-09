@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\InfotecsInternTask\InfotecsInternTask.csproj" />
+    <ProjectReference Include="..\InfotecsInternTask.csproj" />
   </ItemGroup>
 
   <ItemGroup>
