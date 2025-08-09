@@ -18,9 +18,7 @@
 
   <ItemGroup>
     <Folder Include="PresentationLayer\Controllers\" />
-    <Folder Include="DomainLayer\Interfaces\" />
     <Folder Include="PresentationLayer\" />
-    <Folder Include="ApplicationLayer\" />
   </ItemGroup>
 
 </Project>
