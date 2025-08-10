@@ -8,7 +8,6 @@ using InfotecsInternTask.DomainLayer.Interfaces;
 using InfotecsInternTask.InfrastructureLayer.Interfaces;
 using InfotecsInternTask.InfrastructureLayer.Mapping;
 using InfotecsInternTask.InfrastructureLayer.Parsing;
-using InfotecsInternTask.InfrastructureLayer.Repositories;
 
 namespace InfotecsInternTask.ApplicationLayer
 {

@@ -11,18 +11,21 @@ namespace InfotecsInternTask.ApplicationLayer.Services.Validation
 
         public bool IsValid(IEnumerable<CsvValueDto> values)
         {
-            var linesCount = values.Count();
-            if (linesCount < MinRows || linesCount > MaxRows)
-                return false;
+            if (values == null) return false;
 
             var upperBound = DateTime.UtcNow;
+            int count = 0;
 
             foreach (var v in values)
             {
+                count++;
+
                 if (v.Date < _lowerBound || v.Date > upperBound) return false;
                 if (v.ExecutionTime < 0) return false;
                 if (v.Value < 0) return false;
             }
+
+            if (count < MinRows && count > MaxRows) return false;
 
             return true;
         }
