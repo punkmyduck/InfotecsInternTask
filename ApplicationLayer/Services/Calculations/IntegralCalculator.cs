@@ -1,5 +1,5 @@
-﻿using InfotecsInternTask.ApplicationLayer.Interfaces;
-using InfotecsInternTask.DomainLayer.DTO;
+﻿using InfotecsInternTask.DomainLayer.DTO;
+using InfotecsInternTask.DomainLayer.Interfaces;
 
 namespace InfotecsInternTask.ApplicationLayer.Services.Calculations
 {

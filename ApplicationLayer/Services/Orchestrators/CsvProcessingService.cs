@@ -1,8 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using InfotecsInternTask.ApplicationLayer.Interfaces;
 using InfotecsInternTask.DomainLayer.DTO;
+using InfotecsInternTask.DomainLayer.Interfaces;
+using InfotecsInternTask.InfrastructureLayer.Interfaces;
 
-namespace InfotecsInternTask.ApplicationLayer.Services
+namespace InfotecsInternTask.ApplicationLayer.Services.Orchestrators
 {
     public class CsvProcessingService
     {

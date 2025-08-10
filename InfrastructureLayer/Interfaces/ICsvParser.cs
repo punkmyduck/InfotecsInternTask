@@ -1,4 +1,4 @@
-﻿namespace InfotecsInternTask.ApplicationLayer.Interfaces
+﻿namespace InfotecsInternTask.InfrastructureLayer.Interfaces
 {
     public interface ICsvParser<T>
     {

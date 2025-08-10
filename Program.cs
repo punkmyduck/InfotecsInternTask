@@ -1,7 +1,5 @@
-using InfotecsInternTask.ApplicationLayer.Interfaces;
 using InfotecsInternTask.ApplicationLayer.Services.Calculations;
 using InfotecsInternTask.ApplicationLayer.Services.Validation;
-using InfotecsInternTask.ApplicationLayer.Services;
 using InfotecsInternTask.DomainLayer.DTO;
 using InfotecsInternTask.InfrastructureLayer.Mapping;
 using InfotecsInternTask.InfrastructureLayer.Parsing;
@@ -9,6 +7,11 @@ using InfotecsInternTask.InfrastructureLayer.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System;
 using InfotecsInternTask.InfrastructureLayer.EfCoreDbContext;
+using InfotecsInternTask.DomainLayer.Interfaces;
+using InfotecsInternTask.ApplicationLayer.Interfaces;
+using InfotecsInternTask.InfrastructureLayer.Interfaces;
+using InfotecsInternTask.ApplicationLayer.Services.Orchestrators;
+using InfotecsInternTask.ApplicationLayer.Services;
 
 namespace InfotecsInternTask
 {
@@ -26,6 +29,8 @@ namespace InfotecsInternTask
             builder.Services.AddScoped<IResultAggregateMapper, ResultAggregateMapper>();
 
             builder.Services.AddScoped<IResultRepository, ResultRepository>();
+
+            builder.Services.AddScoped<IResultsQueryService, ResultQueryService>();
 
             builder.Services.AddDbContext<ProcessesdbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
