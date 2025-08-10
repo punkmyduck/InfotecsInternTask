@@ -15,18 +15,33 @@ namespace InfotecsInternTask.InfrastructureLayer.Repositories
         }
         public async Task AddOrReplaceResultAsync(Result result)
         {
+            using var transaction = await _processesdbContext.Database.BeginTransactionAsync();
+
             var existingResult = await _processesdbContext.Results
-            .Include(r => r.Values)
-            .FirstOrDefaultAsync(r => r.Filename == result.Filename);
+                .Include(r => r.Values)
+                .FirstOrDefaultAsync(r => r.Filename == result.Filename);
 
             if (existingResult != null)
             {
                 _processesdbContext.Values.RemoveRange(existingResult.Values);
-                _processesdbContext.Results.Remove(existingResult);
+
+                existingResult.Averageexecutiontime = result.Averageexecutiontime;
+                existingResult.Averagevalue = result.Averagevalue;
+                existingResult.Deltatime = result.Deltatime;
+                existingResult.Maxvalue = result.Maxvalue;
+                existingResult.Medianvalue = result.Medianvalue;
+                existingResult.Mindate = result.Mindate;
+                existingResult.Minvalue = result.Minvalue;
+
+                existingResult.Values = result.Values;
+            }
+            else
+            {
+                _processesdbContext.Results.Add(result);
             }
 
-            _processesdbContext.Results.Add(result);
             await _processesdbContext.SaveChangesAsync();
+            await transaction.CommitAsync();
         }
 
         public async Task<IEnumerable<Result>> GetFilteredAsync(ResultFilterDto filter)
