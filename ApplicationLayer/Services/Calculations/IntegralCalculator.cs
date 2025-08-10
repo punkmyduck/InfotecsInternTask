@@ -7,32 +7,43 @@ namespace InfotecsInternTask.ApplicationLayer.Services.Calculations
     {
         public IntegralResultDto Calculate(List<CsvValueDto> values)
         {
-            DateTime maxDate = values.Max(v => v.Date);
-            DateTime minDate = values.Min(v => v.Date);
-            double minValue = values.Min(v => v.Value);
-            double maxValue = values.Max(v => v.Value);
-            double averageExecutionTime = values.Average(v => v.ExecutionTime);
-            double averageValue = values.Average(v => v.Value);
+            double sumExecTime = 0;
+            double sumValue = 0;
+            double minValue = double.MaxValue;
+            double maxValue = double.MinValue;
+            DateTime minDate = DateTime.MaxValue;
+            DateTime maxDate = DateTime.MinValue;
 
-            var valuesList = values.Select(v => v.Value).ToList();
-            double median;
-            if (valuesList.Count % 2 == 1)
+            var valueList = new List<double>(values.Count);
+
+            foreach (var v in values)
             {
-                median = valuesList[valuesList.Count / 2];
+                if (v.Date < minDate) minDate = v.Date;
+                if (v.Date > maxDate) maxDate = v.Date;
+
+                if (v.Value < minValue) minValue = v.Value;
+                if (v.Value > maxValue) maxValue = v.Value;
+
+                sumExecTime += v.ExecutionTime;
+                sumValue += v.Value;
+
+                valueList.Add(v.Value);
             }
-            else
-            {
-                double middle1 = valuesList[(valuesList.Count / 2) - 1];
-                double middle2 = valuesList[valuesList.Count / 2];
-                median = (middle1 + middle2) / 2;
-            }
+
+            double avgExecTime = sumExecTime / values.Count;
+            double avgValue = sumValue / values.Count;
+
+            valueList.Sort();
+            double median = (valueList.Count % 2 == 1)
+                ? valueList[valueList.Count / 2]
+                : (valueList[(valueList.Count / 2) - 1] + valueList[valueList.Count / 2]) / 2.0;
 
             return new IntegralResultDto
             {
                 DeltaTime = (int)(maxDate - minDate).TotalSeconds,
                 MinDate = DateTime.SpecifyKind(minDate, DateTimeKind.Unspecified),
-                AverageExecutionTime = (int)averageExecutionTime,
-                AverageValue = (float)averageValue,
+                AverageExecutionTime = (int)avgExecTime,
+                AverageValue = (float)avgValue,
                 MedianValue = median,
                 MaxValue = maxValue,
                 MinValue = minValue
