@@ -3,7 +3,7 @@ using InfotecsInternTask.DomainLayer.DTO;
 using InfotecsInternTask.DomainLayer.Entities;
 using InfotecsInternTask.DomainLayer.Interfaces;
 
-namespace InfotecsInternTask.ApplicationLayer.Services
+namespace InfotecsInternTask.ApplicationLayer.Services.QueryServices
 {
     public class ResultQueryService : IResultsQueryService
     {
