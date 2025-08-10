@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
-using InfotecsInternTask.ApplicationLayer.Interfaces;
 using InfotecsInternTask.DomainLayer.DTO;
+using InfotecsInternTask.InfrastructureLayer.Interfaces;
 
 namespace InfotecsInternTask.InfrastructureLayer.Parsing
 {

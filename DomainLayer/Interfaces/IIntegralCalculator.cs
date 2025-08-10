@@ -1,6 +1,6 @@
 ﻿using InfotecsInternTask.DomainLayer.DTO;
 
-namespace InfotecsInternTask.ApplicationLayer.Interfaces
+namespace InfotecsInternTask.DomainLayer.Interfaces
 {
     public interface IIntegralCalculator
     {

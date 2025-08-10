@@ -3,8 +3,8 @@ using InfotecsInternTask.DomainLayer.Entities;
 
 namespace InfotecsInternTask.ApplicationLayer.Interfaces
 {
-    public interface IResultMapper
+    public interface IResultsQueryService
     {
-        Result MapFromDto(IntegralResultDto dto);
+        Task<IEnumerable<Result?>> FilterResultsAsync(ResultFilterDto filterParams);
     }
 }
