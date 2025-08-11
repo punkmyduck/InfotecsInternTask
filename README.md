@@ -24,7 +24,7 @@
 - InfotecsInternTask.DomainLayer // Сущности, интерфейсы, DTO
 - InfotecsInternTask.ApplicationLayer // Бизнес-логика, сервисы, валидация
 - InfotecsInternTask.InfrastructureLayer // Доступ к БД, репозитории, парсинг CSV
-- InfotecsInternTask (Web API) // Контроллеры, точка входа
+- InfotecsInternTask.PresentationLayer (Web API) // Контроллеры, точка входа
 
 ### Поток данных (пример для загрузки файла)
 FileUploadController → CsvProcessingService → ICsvParser + ICsvValuesValidator + IIntegralCalculator + IResultAggregateMapper → IResultRepository → EF Core → PostgreSQL
@@ -34,7 +34,7 @@ FileUploadController → CsvProcessingService → ICsvParser + ICsvValuesValidat
 ## Методы API
 
 ### 1. Загрузка CSV файла
-**POST** `/api/upload`  
+**POST** `/Csv/csv`  
 Загружает CSV, валидирует, вычисляет интегральные значения и сохраняет в БД.
 
 ### 2. Фильтрация результатов
@@ -46,7 +46,7 @@ FileUploadController → CsvProcessingService → ICsvParser + ICsvValuesValidat
 - `MinAverageExecutionTime`, `MaxAverageExecutionTime` *(int?, optional)*
 
 ### 3. Последние 10 значений
-**GET** `/Values/Last10ByFile?fileName=example.csv`
+**GET** `/Values/Last10ByFile`
 
 ## Пример CSV файла:
 Date;ExecutionTime;Value
