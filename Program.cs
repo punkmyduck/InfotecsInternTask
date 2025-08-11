@@ -1,5 +1,7 @@
 using InfotecsInternTask.ApplicationLayer;
 using InfotecsInternTask.InfrastructureLayer;
+using InfotecsInternTask.InfrastructureLayer.EfCoreDbContext;
+using Microsoft.EntityFrameworkCore;
 
 namespace InfotecsInternTask
 {
@@ -9,6 +11,8 @@ namespace InfotecsInternTask
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            builder.Services.AddDbContext<ProcessesdbContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("ProcessesDb")));
+
             builder.Services.AddApplicationLayer();
             builder.Services.AddInfrastructureLayer(builder.Configuration);
 
@@ -17,6 +21,12 @@ namespace InfotecsInternTask
             builder.Services.AddSwaggerGen();
 
             var app = builder.Build();
+
+            using (var scope = app.Services.CreateScope())
+            {
+                var db = scope.ServiceProvider.GetRequiredService<ProcessesdbContext>();
+                db.Database.EnsureCreated();
+            }
 
             if (app.Environment.IsDevelopment())
             {
